@@ -1,27 +1,24 @@
-# Portfolio
+# MyPortfolio
 
-Single page application to display my recent work, built with AngularJS. No jQuery, no sliders, no parallax, no shit. The app features a nice grid view, project pages, a timeline and a RSS reader to show post from my blog. Did I tell you that it's fully optimized for search engines? Meta descriptions get automatically loaded. To get this magic to work, I use PhantomJS to prerender pages for crawlers.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.2.
 
-Have a look: http://stekhn.de
+## Development server
 
-### Usage
-1. Clone the repository
-2. Run `npm install` to get the dev dependencies
-3. Run `compass watch` to compile SASS changes
-4. Develop and commit changes
-5. Build a optimized version by running `grunt dist`
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-### Meta Data 
+## Build
 
-### RSS Feed Reader
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-### Data model
+## Deploy
+ Open package.json and then, in script section add the following script.
 
-### To do
-- Add Bower for front-end dependencies
-- Update to AngularJS 2
-- Modularize components
-- Add filters for the project grid
-- Use npm to serve the page for development
-- Add CSS autoprefixer
-- Explain PhantomJS setup
+"scripts": {
+    // ...
+    "deploy": "ng b --prod --base-href https://USERNAME.github.io/DEPOT_NAME/ && npx ngh --dir=dist/Project_Name"
+},
+
+And now, you can build and deploy to GitHub Pages with a single command: npm run deploy
+
+
+
