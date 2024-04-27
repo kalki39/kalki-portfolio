@@ -1,0 +1,40 @@
+{
+  "name": "angular-portfolio",
+  "description": "Portfolio build with AngularJS",
+  "author": "Steffen Kühne",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stekhn/angular-portfolio"
+  },
+  "scripts": {
+    "watch": "grunt watch",
+    "build": "grunt dist"
+  },
+  "devDependencies": {
+    "@lodder/grunt-postcss": "^3.1.1",
+    "autoprefixer": "^10.4.2",
+    "cssnano": "^5.0.15",
+    "grunt": "^1.5.2",
+    "grunt-cli": "^1.4.3",
+    "grunt-contrib-clean": "^2.0.0",
+    "grunt-contrib-concat": "^2.0.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-imagemin": "^4.0.0",
+    "grunt-contrib-uglify": "^5.0.1",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-json-minify": "^1.1.0",
+    "grunt-ng-annotate": "^4.0.0",
+    "grunt-postcss": "^0.9.0",
+    "grunt-sass": "^3.1.0",
+    "grunt-usemin": "^3.1.1",
+    "imagemin-mozjpeg": "^9.0.0",
+    "mozjpeg": "^8.0.0",
+    "node-sass": "^7.0.1",
+    "postcss": "^8.4.5"
+  },
+  "dependencies": {
+    "angular": "^1.8.2",
+    "angular-route": "^1.8.2"
+  }
+}

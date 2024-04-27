@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="de" ng-app="portfolio">
+
+  <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1">
+
+    <title>{{ meta.title() }}</title>
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@stekhn">
+    <meta name="twitter:creator" content="@stekhn" />
+    <meta name="twitter:title" content="{{ meta.title() }}"/>
+    <meta name="twitter:description" content="{{ meta.description() }}"/>
+    <meta name="twitter:image" content="{{ meta.image() }}"/>
+
+    <meta property="og:type" content="website" />
+    <meta property="fb:app_id" content="525429487659046" />
+    <meta property="fb:profile_id" content="1801615413" />
+    <meta property="og:url" content="{{ meta.url() }}" />
+    <meta property="og:title" content="{{ meta.title() }}" />
+    <meta property="og:description" content="{{ meta.description() }}" />
+    <meta property="og:image" content="{{ meta.image() }}" />
+    <meta property="og:locale" content="de_DE" />
+
+    <meta name="author" content="Steffen Kühne" />
+    <meta name="copyright" content="Steffen Kühne" />
+    <meta name="description" content="{{ meta.description() }}"/>
+    <meta name="keywords" content="{{ meta.keywords() }}"/>
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+
+    <!-- build:css css/style.min.css -->
+    <link rel="stylesheet" type="text/css" href="style/main.css">
+    <!-- endbuild -->
+
+    <!-- build:js src/main.min.js -->
+    <script type="text/javascript" src="../node_modules/angular/angular.min.js"></script>
+    <script type="text/javascript" src="../node_modules/angular-route/angular-route.min.js"></script>
+
+    <script type="text/javascript" src="script/app.js"></script>
+    <script type="text/javascript" src="script/routes.js"></script>
+    <script type="text/javascript" src="script/services/jsonLoader.js"></script>
+    <script type="text/javascript" src="script/services/metaTags.js"></script>
+    <script type="text/javascript" src="script/controllers/navCtrl.js"></script>
+    <script type="text/javascript" src="script/controllers/metaCtrl.js"></script>
+    <script type="text/javascript" src="script/controllers/projectCtrl.js"></script>
+    <script type="text/javascript" src="script/controllers/projectMetaCtrl.js"></script>
+    <script type="text/javascript" src="script/components/dashcaseFilter.js"></script>
+    <script type="text/javascript" src="script/components/feedReader.js"></script>
+    <!-- endbuild -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <section class="logo">
+        <a href="#!/">
+          <h1>Steffen Kühne</h1>
+          <p>Journalismus, Code & Design</p>
+        </a>
+      </section>
+
+      <nav ng-controller="NavCtrl">
+        <ul>
+          <li><a href="#!/" ng-class="{active: isActive('/')}">Portfolio</a></li>
+          <li><a href="#!/curriculum" ng-class="{active: isActive('/curriculum')}">Vita</a></li>
+          <li><a href="#!/contact" ng-class="{active: isActive('/contact')}">Kontakt</a></li>
+          <li><a href="#!/blog" ng-class="{active: isActive('/blog')}">Blog</a></li>
+          <li><a href="#!/imprint" ng-class="{active: isActive('/imprint')}">Impressum</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main ng-view></main>
+
+    <footer>
+      <p><a href="https://twitter.com/stekhn" target="_blank" rel="noreferrer">Twitter</a> | <a href="http://datenkritik.de" target="_blank" rel="noopener">Blog</a> | <a href="https://github.com/stekhn/portfolio" target="_blank" rel="noopener">Quellcode</a></p>
+    </footer>
+
+  </body>
+
+</html>
