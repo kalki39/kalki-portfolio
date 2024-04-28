@@ -30,4 +30,15 @@ li.active{
   text-align: center;
 }
 
+.cd{
+  transition: all 0.3s ease;
+}
+.cd:hover{
+  transform: scale(1.06);
+  cursor: pointer;
+}
+.cl:hover{
+  cursor: alias;
+}
+
 

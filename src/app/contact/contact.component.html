@@ -11,39 +11,43 @@
                 </div>
             </div>
             <div class="col-md-9">
-                <div class="contact-form">
+                <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="identite">{{'contact.identify' | translate}}</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="identite" placeholder="{{'contact.enterIdentify' | translate}}"
+                            <input type="text" formControlName="identite" class="form-control" id="identite" placeholder="{{'contact.enterIdentify' | translate}}"
                                 name="fname">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="email">{{'contact.email' | translate}}</label>
                         <div class="col-sm-10">
-                            <input type="email" class="form-control" id="email" placeholder="{{'contact.enterEmail' | translate}}" name="email">
+                            <input type="email" formControlName="email" class="form-control" id="email" placeholder="{{'contact.enterEmail' | translate}}" name="email">
                         </div>
+                        <!-- <div *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched && contactForm?.get('email')?.errors?.required"
+                        class="alert alert-danger">Email is required.</div>
+                      <div *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched && contactForm.get('email')?.errors?.email"
+                        class="alert alert-danger">Invalid email format.</div> -->
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="object">{{'contact.object' | translate}}</label>
+                        <label class="control-label col-sm-2" for="object">Subject</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="object" placeholder="{{'contact.enterObject' | translate}}"
+                            <input type="text" formControlName="object" class="form-control" id="object" placeholder="Subject"
                                 name="object">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="comment">{{'contact.message' | translate}}</label>
                         <div class="col-sm-10">
-                            <textarea class="form-control" rows="5" id="comment"></textarea>
+                            <textarea formControlName="comment" class="form-control" rows="5" id="comment"></textarea>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
-                            <button type="submit" class="btn btn-default">{{'contact.send' | translate}}</button>
+                            <button type="submit" class="btn btn-default" style="margin-bottom: 30px;" [disabled]="!contactForm.valid">{{'contact.send' | translate}}</button>
                         </div>
                     </div>
-                </div>
+               </form>
             </div>
         </div>
     </div>

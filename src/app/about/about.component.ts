@@ -17,7 +17,7 @@ export class AboutComponent implements OnInit {
   birthday: any;
   badge: any;
   home: any;
-  
+  file:any;
   constructor(private _translationLoaderService: TranslationLoaderService) {
     this._translationLoaderService.loadTranslations(english, french);
   }
@@ -30,6 +30,7 @@ export class AboutComponent implements OnInit {
     this.birthday = awesom.faBirthdayCake;
     this.badge = awesom.faGraduationCap;
     this.home = awesom.faLaptopHouse;
+    this.file=awesom.faFile;
   }
 
 }

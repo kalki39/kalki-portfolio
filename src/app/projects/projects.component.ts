@@ -66,4 +66,7 @@ export class ProjectsComponent implements OnInit {
     }
     );
   }
+  openLink(url:string){
+    window.open(url,"blank")
+  }
 }
